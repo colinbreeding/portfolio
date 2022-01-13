@@ -127,31 +127,6 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
-// TEXT ANIMATION
-const text = document.querySelector('.home__title');
-const strText = text.textContent;
-const splitText = strText.split("");
-text.textContent = "";
-
-for(let i=0; i<splitText.length; i++){
-    text.innerHTML += "<span>" + splitText[i] + "</span>";
-}
-let char = 0;
-let timer = setInterval(onTick, 50);
-
-function onTick(){
-    const span = text.querySelectorAll('span')[char];
-    span.classList.add('fade');
-    char++
-    if(char === splitText.length){
-        complete();
-        return;
-    }
-}
-function complete(){
-    clearInterval(timer);
-    timer = null;
-}
 // Swiper Js
 const portfolioSwiper = new Swiper('.portfolio__container', {
     cssMode: true,
@@ -181,3 +156,22 @@ const testimoialSwiper = new Swiper('.testimonial__container', {
         }
     }
 });
+const sr = ScrollReveal({
+    distance: '60px',
+    duration: 2800,
+    reset: true,
+})
+
+sr.reveal(`.home__container, .about__container, .contact__container`,{
+    origin: 'top',
+    interval: 100,
+})
+
+sr.reveal(`.about__container`,{
+    origin: 'left',
+})
+
+sr.reveal(`.skills__container, .qualification__container, .portfolio__container, .testimonial__container`,{
+    origin: 'right',
+    interval: 100,
+})
