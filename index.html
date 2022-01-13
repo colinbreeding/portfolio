@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
     <!-- Unicorns -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <title>Portfolio Website</title>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/png">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5fb21fb766.js" crossorigin="anonymous"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Portfolio</title>
 </head>
 
 <body>
@@ -471,7 +471,7 @@
                                 <img src="assets/img/testimonial1.jpg" alt="" class="testimonial__img">
                                 <div>
                                     <h3 class="testimonial__name">Sara Smith</h3>
-                                    <span class="testimonial__client">Client</span>
+                                    <p class="testimonial__client">Client</p>
                                 </div>
                             </div>
                             <div class="testimonial__icon">
@@ -627,42 +627,9 @@
             <i class="uil uil-arrow-up scrollup__icon"></i>
         </a>
     </main>
+    <!-- SWIPER JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <!-- MAIN JS -->
     <script src="assets/js/main.js"></script>
-    <!-- SWIPER JS -->
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script type="module">
-        import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js';
-        const swiper = new Swiper('.portfolio__container', {
-            cssMode: true,
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-    </script>
-    <script type="module">
-        import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js';
-        const swiper = new Swiper('.testimonial__container', {
-            loop: true,
-            grabCursor: true,
-            spaceBetween: 48,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            breakpoints: {
-                568: {
-                    slidesPerView: 2,
-                }
-            }
-        });
-    </script>
 </body>
 </html>
