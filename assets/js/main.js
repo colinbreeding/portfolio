@@ -167,11 +167,6 @@ sr.reveal(`.home__container, .about__container, .contact__container`,{
     interval: 100,
 })
 
-sr.reveal(`.about__container`,{
+sr.reveal(`.about__container, .skills__container, .qualification__container, .portfolio__container, .testimonial__container`,{
     origin: 'left',
-})
-
-sr.reveal(`.skills__container, .qualification__container, .portfolio__container, .testimonial__container`,{
-    origin: 'right',
-    interval: 100,
 })
