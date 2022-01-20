@@ -162,11 +162,11 @@ const sr = ScrollReveal({
     reset: true,
 })
 
-sr.reveal(`.home__container, .about__container, .contact__container`,{
+sr.reveal(`.home__container`,{
     origin: 'top',
     interval: 100,
 })
 
-sr.reveal(`.about__container, .skills__container, .qualification__container, .portfolio__container, .testimonial__container`,{
+sr.reveal(`.skills__container, .qualification__container, .portfolio__container, .testimonial__container`,{
     origin: 'left',
 })
