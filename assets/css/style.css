@@ -238,7 +238,7 @@ img {
 /* HOME */
 .home__container{
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 .home__content{
     grid-template-columns: .5fr 3fr;
@@ -562,10 +562,6 @@ span.fade{
     background-color: var(--first-color);
 }
 /* TESTIMONIAL */
-/* .testimonial__data,
-.testimonial__header{
-    display: flex;
-} */
 .testimonial__content{
     padding: 0 3rem 0 3rem;
 }
@@ -798,6 +794,7 @@ span.fade{
     }
 }
 @media screen and (min-width: 613px) {
+
     .portfolio-div__img{
         display: inline;
         margin-left: 2rem;
@@ -817,6 +814,9 @@ span.fade{
     }
     .section__subtitle{
         margin-bottom: 4rem;
+    }
+    .home__container{
+        margin-bottom: 5rem;
     }
     .header{
         top: 0;
