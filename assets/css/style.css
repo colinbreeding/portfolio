@@ -6,7 +6,7 @@
     --header-height: 3rem;
 
     /* COLORS */
-    --hue-color: 210;
+    --hue-color: 212;
 
     /* HSL COLOR MODE */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -522,6 +522,7 @@ span.fade{
     width: 315px;
     border-radius: .5rem;
     justify-self: center;
+    box-shadow: 10px 10px 10px hsl(10, 0%, 4%);
 }
 .portfolio__title{
     font-size: var(--h3-font-size);
