@@ -166,7 +166,3 @@ sr.reveal(`.home__container,.skills__container, .qualification__container, .port
     origin: 'top',
     interval: 100,
 })
-
-sr.reveal(``, {
-    origin: 'left',
-})
