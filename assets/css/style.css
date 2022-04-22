@@ -391,6 +391,9 @@ span.fade {
     padding: 1rem;
     border-radius: .5rem;
     font-weight: var(--font-medium);
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .button:hover {
