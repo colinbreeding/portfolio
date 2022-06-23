@@ -294,6 +294,7 @@ img {
 .home__container {
     gap: 1rem;
     margin-bottom: 5rem;
+    margin-left: 14rem !important;
 }
 
 .home__content {
