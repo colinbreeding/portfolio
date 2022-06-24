@@ -279,15 +279,15 @@ img {
 
 #home::before {
   content: "";
+  background: url(../img/about4.jpg) repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: url(../img/about4.jpg) repeat fixed 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.6;
 }
 
 .home__container {
@@ -406,7 +406,12 @@ span.fade {
   margin-left: var(--mb-0-5);
   transition: 0.3s;
 }
-
+.globe__icon {
+  margin-right: var(--mb-0-5);
+}
+.github__icon {
+  margin-right: var(--mb-0-5);
+}
 .button--flex {
   display: inline-flex;
   align-items: center;
@@ -443,8 +448,8 @@ span.fade {
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }
-
 .about__buttons {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -662,9 +667,15 @@ span.fade {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
 }
+.portfolio__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: 2rem;
 }
 
 .portfolio__button:hover .button__icon {
@@ -673,12 +684,16 @@ span.fade {
 
 .portfolio__data {
   padding: 2rem 2rem 4rem 2rem;
+  text-align: center;
 }
 
 .portfolio-div__img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.portfolio__img {
+  width: 25rem;
 }
 
 .swiper-button-prev::after,
@@ -785,6 +800,9 @@ span.fade {
 .contact__label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
+}
+.contact__button {
+  font-family: "Poppins", sans-serif;
 }
 
 .contact__input {
@@ -898,7 +916,7 @@ span.fade {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 659px) {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
@@ -922,11 +940,22 @@ span.fade {
   .home__social-icon {
     margin-right: 1rem;
   }
-
-  .skills__title {
+  .home__description .skills__title {
     font-size: var(--normal-font-size);
   }
-
+  .portfolio__img {
+    width: 20rem;
+  }
+  .portfolio__data {
+    padding: 1rem 0 4rem 0;
+  }
+  .portfolio__button {
+    margin-top: 0.5rem;
+    width: 8rem;
+    font-size: 0.75rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
   .qualification__data {
     gap: 0.5rem;
   }
@@ -961,7 +990,7 @@ span.fade {
 }
 
 /* For medium devices */
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 660px) {
   .home__content {
     grid-template-columns: max-content 1fr 1fr;
   }
@@ -975,12 +1004,6 @@ span.fade {
     justify-self: center;
   }
 
-  .portfolio-div__img {
-    display: inline;
-    margin-top: 3rem;
-    margin-left: 2rem;
-  }
-
   .about__img {
     width: 280px;
     height: 350px;
@@ -991,7 +1014,6 @@ span.fade {
   }
 
   .about__container,
-  .portfolio__content,
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -1003,15 +1025,6 @@ span.fade {
     justify-content: center;
   }
 }
-
-@media screen and (min-width: 613px) {
-  .portfolio-div__img {
-    display: inline;
-    margin-left: 2rem;
-    margin-top: 2rem;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .container {
     margin-left: auto;
@@ -1116,11 +1129,6 @@ span.fade {
   .about__info {
     justify-content: space-between;
   }
-
-  .about__buttons {
-    justify-content: initial;
-  }
-
   .qualification__tabs {
     justify-content: center;
   }
@@ -1131,16 +1139,6 @@ span.fade {
 
   .qualification__sections {
     grid-template-columns: 0.5fr;
-  }
-
-  .porfolio__img {
-    width: 400px;
-  }
-
-  .portfolio-div__img {
-    display: inline;
-    margin-left: 2rem;
-    margin-bottom: 3rem;
   }
 
   .portfolio__content {
@@ -1192,11 +1190,6 @@ span.fade {
   .porfolio__img {
     width: 400px;
   }
-
-  .portfolio-div__img {
-    margin-bottom: 3rem;
-  }
-
   .swiper-portfolio-icon {
     font-size: 3.5rem;
   }
