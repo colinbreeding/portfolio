@@ -1122,10 +1122,6 @@ span.fade {
     column-gap: 5rem;
   }
 
-  .about__description {
-    text-align: initial;
-  }
-
   .about__info {
     justify-content: space-between;
   }
