@@ -3,7 +3,7 @@
 
 /* VARIABLE CSS */
 :root {
-  --header-height: 3rem;
+  --header-height: 2.5rem;
 
   /* COLORS */
   --hue-color: 212;
@@ -175,7 +175,6 @@ img {
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--body-color);
 }
 
 /* NAV */
@@ -268,12 +267,13 @@ img {
 /* CHANGE BACKGROUND HEADER */
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px hsla(0, 4%, 15%, 0.1);
+  transition: 500ms ease;
 }
-
 /* HOME */
 #home {
   position: relative;
-  margin-top: 2rem;
   height: 100vh;
 }
 
@@ -298,7 +298,6 @@ img {
 
 .home__content {
   grid-template-columns: 0.5fr 3fr;
-  padding-top: 3.5rem;
   align-items: center;
 }
 
@@ -345,6 +344,27 @@ img {
   margin-bottom: var(--mb-2);
   color: var(--text-color);
   margin-right: 2rem;
+}
+
+.typing-animation {
+  width: 9.4ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .home__scroll {
@@ -1045,9 +1065,12 @@ span.fade {
 
   .home__container {
     margin-bottom: 5rem;
+    row-gap: 2rem;
   }
   .home__content {
     margin: 0 1rem 0 1rem;
+    padding-top: 1rem;
+    column-gap: 2rem;
   }
 
   .header {
@@ -1086,15 +1109,6 @@ span.fade {
 
   .change-theme {
     margin: 0;
-  }
-
-  .home__container {
-    row-gap: 5rem;
-  }
-
-  .home__content {
-    padding-top: 5.5rem;
-    column-gap: 2rem;
   }
 
   .home__blob {
