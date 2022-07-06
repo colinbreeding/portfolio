@@ -1011,7 +1011,6 @@ span.fade {
   }
 }
 
-/* For medium devices */
 @media screen and (min-width: 660px) {
   .home__content {
     grid-template-columns: max-content 1fr 1fr;
@@ -1179,7 +1178,6 @@ span.fade {
   }
 }
 
-/* For Large Devices */
 @media screen and (min-width: 1024px) {
   .header,
   .main,
