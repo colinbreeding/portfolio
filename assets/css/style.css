@@ -440,10 +440,14 @@ span.fade {
   border: none;
   outline: none;
   cursor: pointer;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .button:hover {
-  background-color: var(--first-color-alt);
+  background-color: var(--body-color);
+  color: var(--first-color);
+  outline: 1px solid hsl(var(--hue-color), 69%, 61%);
 }
 
 .button__icon {
@@ -451,6 +455,10 @@ span.fade {
   margin-left: var(--mb-0-5);
   transition: 0.3s;
 }
+.button__icon:hover {
+  color: var(--first-color);
+}
+
 .globe__icon {
   margin-right: var(--mb-0-5);
 }
@@ -466,9 +474,10 @@ span.fade {
 .about__img {
   width: 180px;
   height: 220px;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   justify-self: center;
   align-self: center;
+  box-shadow: 10px 14px 18px -3px rgba(0, 0, 0, 0.57);
 }
 
 .about__description {
@@ -710,7 +719,7 @@ span.fade {
   width: 315px;
   border-radius: 0.5rem;
   justify-self: center;
-  box-shadow: 10px 10px 10px hsl(10, 0%, 4%);
+  box-shadow: 10px 14px 18px -3px rgba(0, 0, 0, 0.57);
 }
 
 .portfolio__title {
@@ -896,7 +905,7 @@ span.fade {
 }
 
 .footer__link:hover {
-  color: var(--first-color-lighter);
+  color: var(--first-color);
 }
 
 .footer__social {
@@ -905,7 +914,7 @@ span.fade {
 }
 
 .footer__social:hover {
-  color: var(--first-color-lighter);
+  color: var(--first-color);
 }
 
 .footer__copy {
@@ -936,12 +945,16 @@ span.fade {
 }
 
 .scrollup:hover {
-  background-color: var(--first-color-alt);
+  background-color: var(--body-color);
+  outline: 2px solid var(--first-color);
 }
 
 .scrollup__icon {
   font-size: 1.5rem;
   color: #fff;
+}
+.scrollup__icon:hover {
+  color: var(--first-color);
 }
 
 /* SHOW SCROLL */
