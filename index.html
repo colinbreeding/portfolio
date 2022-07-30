@@ -15,38 +15,38 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Portfolio</title>
-</head>
+    </head>
 
 <body>
     <!-- HEADER -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Colin</a>
+            <a href="#" class="nav__logo" id="nav-text">Colin</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
+                        <a href="#home" class="nav__link active-link" id="nav-link">
                             <i class="uil uil-estate nav__icon"></i> Home
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">
+                        <a href="#about" class="nav__link" id="nav-link">
                             <i class="uil uil-user nav__icon"></i> About
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="#skills" class="nav__link">
+                        <a href="#skills" class="nav__link" id="nav-link">
                             <i class="uil uil-file-alt nav__icon"></i> Skills
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
+                        <a href="#portfolio" class="nav__link" id="nav-link">
                             <i class="uil uil-scenery nav__icon"></i> Portfolio
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">
+                        <a href="#contact" class="nav__link" id="nav-link">
                             <i class="uil uil-message nav__icon"></i> Contact Me
                         </a>
                     </li>
@@ -65,6 +65,7 @@
     </header>
 
     <!-- MAIN -->
+    <div id="vanta"></div>
     <main class="main">
         <!-- HOME -->
         <div class="scroll_container">
@@ -127,10 +128,6 @@
                                 <p class="about__info-title">10+</p>
                                 <p class="about__info-name">Completed <br> Projects</p>
                             </div>
-                            <!-- <div>
-                                <p class="about__info-title">3+</p>
-                                <p class="about__info-name">Companies <br> Worked</p>
-                            </div> -->
                         </div>
                         <div class="about__buttons">
                             <a download="" href="assets/pdf/Resume.pdf" class="button button--flex" target="_blank">
@@ -458,50 +455,6 @@
                             </a>
                         </div>
                     </div>
-                    <!-- PORTFOLIO 5 -->
-                    <!-- <div class="portfolio__content grid swiper-slide">
-                        <div class="portfolio-div__img">
-                            <img src="assets/img/portfolio4.png" alt="" class="portfolio__img">
-                        </div>
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Yousic</h3>
-                            <p class="portfolio__subtitle">HTML5, CSS3, JavaScript</p>
-                            <p class="portfolio__description">Responsive crypto coin landing page for startup buisness.</p>
-                            <a href="https://www.yousic.io" target="_blank"
-                                class="button button--flex button--small portfolio__button">
-                                <i class="uil uil-globe globe__icon"></i>
-                                Website
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                            <a href="https://github.com/Yousic-io/coming-soon-page" target="_blank"
-                                class="button button--flex button--small portfolio__button">
-                                <i class="uil uil-github-alt github__icon"></i>Source
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
-                    <!-- PORTFOLIO 6 -->
-                    <!-- <div class="portfolio__content grid swiper-slide">
-                        <div class="portfolio-div__img">
-                            <img src="assets/img/portfolio2.png" alt="" class="portfolio__img">
-                        </div>
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Timepiece</h3>
-                            <p class="portfolio__subtitle">HTML5, CSS3, JavaScript</p>
-                            <p class="portfolio__description">Responsive ecommerce landing page with smooth animation and interactivity.</p>
-                            <a href="https://www.timepiece.link"
-                                class="button button--flex button--small portfolio__button" target="_blank">
-                                <i class="uil uil-globe globe__icon"></i>
-                                Website
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                            <a href="https://github.com/colinmb5/Watch-Website" target="_blank"
-                                class="button button--flex button--small portfolio__button">
-                                <i class="uil uil-github-alt github__icon"></i>Source
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div> -->
                 </div>
                 <!-- ADD PAGINATION -->
                 <div class="swiper-button-next">
@@ -669,6 +622,9 @@
     <script src="assets/js/main.js"></script>
     <!-- Gradient -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Vanta -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
 </body>
 
 </html>

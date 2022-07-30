@@ -66,6 +66,7 @@ tabs.forEach((tab) => {
     tab.classList.add("qualification__active");
   });
 });
+
 // SCROLL SECTION ACTIVE LINK
 const sections = document.querySelectorAll("section[id]");
 
@@ -75,7 +76,7 @@ function scrollActive() {
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+    const sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -89,14 +90,35 @@ function scrollActive() {
   });
 }
 window.addEventListener("scroll", scrollActive);
+
 // CHANGE BACKGROUND HEADER
 function scrollHeader() {
   const nav = document.getElementById("header");
+  const navText = document.getElementById("nav-text");
+  const navTextLink = document.querySelectorAll("#nav-link");
+  const themebutton = document.getElementById("theme-button");
   // When the scroll is greater than 30 viewport height, add the scroll-header class to the header tag
   if (this.scrollY >= 30) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
+  if (this.scrollY >= 30 && !document.body.classList.contains(darkTheme)) {
+    navText.classList.add("navtext-dark");
+    themebutton.classList.add("navtext-dark");
+  } else {
+    navText.classList.remove("navtext-dark");
+    themebutton.classList.remove("navtext-dark");
+  }
+  if (this.scrollY >= 30 && !document.body.classList.contains(darkTheme)) {
+    for (const link of navTextLink) {
+      link.classList.add("navtext-dark2");
+    }
+  } else {
+    for (const link of navTextLink) {
+      link.classList.remove("navtext-dark2");
+    }
+  }
 }
 window.addEventListener("scroll", scrollHeader);
+
 // SHOW SCROLL UP
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");
@@ -105,6 +127,7 @@ function scrollUp() {
   else scrollUp.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollUp);
+
 // DARK LIGHT THEME
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
@@ -139,6 +162,7 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
 // Swiper Js
 const portfolioSwiper = new Swiper(".portfolio__container", {
   cssMode: true,
@@ -168,6 +192,8 @@ const testimoialSwiper = new Swiper(".testimonial__container", {
     },
   },
 });
+
+// Scroll Animation
 const sr = ScrollReveal({
   distance: "60px",
   duration: 2800,
@@ -181,3 +207,17 @@ sr.reveal(
     interval: 100,
   }
 );
+
+// Animated Background
+window.addEventListener("DOMContentLoaded", () => {
+  VANTA.HALO({
+    el: "#vanta",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    backgroundColor: 0x0,
+    xOffset: 0.12,
+  });
+});
