@@ -97,14 +97,17 @@ function scrollHeader() {
   const navText = document.getElementById("nav-text");
   const navTextLink = document.querySelectorAll("#nav-link");
   const themebutton = document.getElementById("theme-button");
+  const navToggle = document.getElementById("nav-toggle");
   // When the scroll is greater than 30 viewport height, add the scroll-header class to the header tag
   if (this.scrollY >= 30) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
   if (this.scrollY >= 30 && !document.body.classList.contains(darkTheme)) {
     navText.classList.add("navtext-dark");
+    navToggle.classList.add("navtext-dark");
     themebutton.classList.add("navtext-dark");
   } else {
     navText.classList.remove("navtext-dark");
+    navToggle.classList.remove("navtext-dark");
     themebutton.classList.remove("navtext-dark");
   }
   if (this.scrollY >= 30 && !document.body.classList.contains(darkTheme)) {
