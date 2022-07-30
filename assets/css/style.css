@@ -83,8 +83,8 @@ body.dark-theme {
 
 /* Vanta */
 #vanta {
-  z-index: 0;
-  position: absolute;
+  z-index: -1;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -150,6 +150,7 @@ img {
 /* REUSABLE CSS CLASSES */
 .section {
   padding: 2rem 0 4rem;
+  background-color: var(--body-color);
 }
 
 .section__title {
@@ -301,24 +302,11 @@ img {
   transition: 500ms ease;
 }
 /* HOME */
-#home {
+.home {
+  background-color: rgba(255, 255, 255, 0);
   position: relative;
   height: 100vh;
 }
-
-/* #home::before {
-  content: "";
-  background: url(../img/about4.jpg) repeat fixed 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.6;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-} */
-
 .home__container {
   gap: 1rem;
   max-width: 950px;
@@ -834,6 +822,7 @@ span.fade {
 /* CONTACT ME */
 .contact__container {
   row-gap: 3rem;
+  padding-bottom: 2rem;
 }
 
 .contact__information {
@@ -883,10 +872,6 @@ span.fade {
 }
 
 /* FOOTER */
-.footer {
-  padding-top: 2rem;
-}
-
 .footer__container {
   row-gap: 3.5rem;
 }
