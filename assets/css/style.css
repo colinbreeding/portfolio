@@ -211,6 +211,9 @@ img {
   display: inline-flex;
   align-items: center;
 }
+.top__contact__button:hover {
+  background-color: transparent !important;
+}
 /* BUTTON DARK/LIGHT */
 .nav__btns {
   display: flex;
