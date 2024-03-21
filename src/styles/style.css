@@ -475,6 +475,8 @@ span.fade {
   justify-self: center;
   align-self: center;
   box-shadow: 10px 14px 18px -3px rgba(0, 0, 0, 0.57);
+  object-fit: cover;
+  object-position: 100% 20%;
 }
 
 .about__description {
