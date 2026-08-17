@@ -83,7 +83,7 @@ const DESKTOP_LOOSE: Band[] = ["U", "U", "M", "M", "M", "L"];
 const MOBILE_CORE: Band[] = ["U", "U", "M", "M", "L"];
 const MOBILE_LOOSE: Band[] = ["U", "M"];
 
-type Variant = "drum" | "slender" | "minnow" | "deep" | "shark" | "whale";
+type Variant = "drum" | "slender" | "minnow" | "deep" | "shark";
 
 type SchoolMark = {
   left: number;
@@ -96,7 +96,7 @@ type SchoolMark = {
 
 type Spawn = {
   id: number;
-  kind: "fish" | "shark" | "school" | "whale";
+  kind: "fish" | "shark" | "school";
   variant: Variant;
   topVh: number;
   z: number; // stable stacking tier; nearer creatures cover distant ones
@@ -236,29 +236,6 @@ function makeShark(id: number, mobile: boolean, range: [number, number]): Spawn 
   };
 }
 
-function makeWhale(id: number): Spawn {
-  const depth = rand(0.35, 0.55);
-  const topVh = +(depth * 88).toFixed(1);
-  // Same depth-based treatment as the sharks, so the whale sits in the
-  // identical dark navy family instead of a whale-specific tint.
-  const alpha = clamp(lerp(0.17, 0.09, depth) + rand(-0.01, 0.01), 0.08, 0.16);
-  return {
-    id,
-    kind: "whale",
-    variant: "whale",
-    topVh,
-    z: 10,
-    dir: Math.random() < 0.5 ? 1 : -1,
-    width: Math.round(rand(380, 440)),
-    dur: +rand(40, 55).toFixed(1),
-    progress: 0,
-    blur: 3,
-    color: blendOver(depthRgb(clamp(depth + 0.15, 0, 1)), oceanRgbAt(topVh + 5), alpha),
-    dyVh: +rand(-3, 3).toFixed(1),
-    bob: `${rand(10, 13).toFixed(1)}s`,
-  };
-}
-
 function makeSchool(id: number, mobile: boolean, progress: number): Spawn {
   const depth = Math.random() < 0.7 ? rand(0.05, 0.45) : rand(0.45, 0.75);
   const count = mobile ? randInt(10, 16) : randInt(12, 24);
@@ -300,14 +277,6 @@ function CreatureSvg({ variant }: { variant: Variant }) {
     return (
       <svg viewBox="0 0 160 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M154 36c-14-8-30-11-44-12-5 0-11 0-16 0-4-4-8-12-12-18-2 8-6 16-12 20-14 3-30 6-44 8l-20-18c4 10 6 17 10 22l-8 14c8-5 16-8 22-6 12 2 24 3 36 2l8 13c3-7 6-11 12-13 26 0 50-4 68-12z" />
-      </svg>
-    );
-  }
-  if (variant === "whale") {
-    return (
-      <svg viewBox="0 0 240 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M228 34c8 6 8 16 0 22-28 8-68 10-108 6-36-4-58-10-72-16l-22 18c4-8 6-16 10-22l-22-16c10 6 16 9 26 10 15-4 26-8 38-9 2-5 8-6 10-1 32-4 72-6 104-2 20 3 32 6 36 10z" />
-        <path d="M152 58l-14 14c6-6 12-10 20-12z" />
       </svg>
     );
   }
@@ -420,13 +389,6 @@ export function Underwater() {
       later(() => sharkSlot(range), (s.dur + gap) * 1000);
     };
 
-    const whaleSlot = () => {
-      if (stopped) return;
-      const w = makeWhale(idRef.current++);
-      addSpawn(w, w.dur + 2);
-      later(whaleSlot, (w.dur + rand(90, 180)) * 1000);
-    };
-
     const start = () => {
       const mobile = isMobile();
       const core = mobile ? MOBILE_CORE : DESKTOP_CORE;
@@ -444,7 +406,6 @@ export function Underwater() {
         later(() => sharkSlot([0.3, 0.55]), rand(5, 15) * 1000);
         later(() => sharkSlot([0.6, 0.88]), rand(20, 40) * 1000);
       }
-      later(whaleSlot, rand(60, 140) * 1000);
     };
 
     const stopAll = () => {
