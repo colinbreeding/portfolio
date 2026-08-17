@@ -20,10 +20,12 @@ export function SiteHeader() {
             href={siteConfig.socials.x}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+            className="group flex items-center gap-1.5 text-xs text-foreground transition-colors"
           >
             <FaXTwitter className="h-3 w-3" />
-            Follow me
+            <span className="text-white transition-colors group-hover:text-foreground">
+              Follow me
+            </span>
           </a>
         </nav>
       </div>

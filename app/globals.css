@@ -54,6 +54,21 @@
   }
 }
 
+@layer components {
+  /* Fine monochrome fractal-noise grain; sits above the surface tint but behind
+     content (requires `relative isolate` on the host element). */
+  .paper-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23grain)'/%3E%3C/svg%3E");
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -68,17 +83,17 @@
     background-image: linear-gradient(
       to bottom,
       #099bfe 0%,
-      #068df9 8%,
-      #057cf2 16%,
-      #0263e6 25%,
-      #0246d5 35%,
-      #002fb3 45%,
-      #021e89 55%,
-      #01125a 65%,
-      #00082d 75%,
-      #010310 85%,
-      #01020a 92%,
-      #000000 100%
+      #068df9 5%,
+      #057cf2 10%,
+      #0263e6 15%,
+      #0246d5 25%,
+      #002fb3 35%,
+      #021e89 45%,
+      #01125a 55%,
+      #00082d 65%,
+      #010310 75%,
+      #01020a 85%,
+      #000000 95%
     );
     background-repeat: no-repeat;
     text-rendering: optimizeLegibility;

@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 export default function Home() {
   return (
     <div className="flex min-h-dvh flex-col">
-      <div className="mx-auto flex w-full flex-1 flex-col border border-white/[0.08] bg-[rgba(3,15,45,0.5)] shadow-[0_20px_60px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-xl backdrop-saturate-[1.2]">
+      <div className="paper-grain relative isolate mx-auto flex w-full flex-1 flex-col border border-white/[0.05] bg-[rgba(4,12,32,0.6)] shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
         <SiteHeader />
 
         <main className="mx-auto w-full max-w-xl flex-1 px-6 pt-11">

@@ -9,12 +9,12 @@ export function About() {
 
       <div className="flow-root">
         <Image
-          src="/me.jpg"
-          alt="Colin Breeding with his son"
+          src="/scuba.jpg"
+          alt="Colin Breeding scuba diving"
           width={160}
           height={160}
           priority
-          className="mb-4 h-[160px] w-[160px] rounded-full border border-border object-cover sm:float-right sm:mb-2 sm:ml-7"
+          className="mb-4 h-[160px] w-[160px] rounded-full object-cover sm:float-right sm:mb-2 sm:ml-7"
         />
 
         <div className="space-y-4 text-base">
@@ -30,7 +30,7 @@ export function About() {
           <p>
             Outside of work, I&apos;m a dad to a 3-year-old who keeps every day
             interesting. I&apos;m also into
-            golfing, fishing, and hiking — the hobbies I rely on to make sure I
+            golfing, fishing, and hiking - the hobbies I rely on to make sure I
             actually leave the house and get some sunlight every now and then.
           </p>
         </div>
