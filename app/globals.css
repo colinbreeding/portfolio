@@ -99,3 +99,190 @@
     text-rendering: optimizeLegibility;
   }
 }
+
+/* ---------- Underwater ambience (decorative, behind the content panel) ---------- */
+
+.underwater {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* JS-spawned creatures (components/underwater.tsx). Each spawn is a
+   one-shot randomized crossing; per-creature vars are set inline. The
+   base transform parks creatures off-screen whenever animations don't
+   run, and the crossing animation is gated behind no-preference below. */
+.uw-js {
+  position: absolute;
+  left: 0;
+  transform: translate3d(var(--uw-from, -110vw), 0, 0);
+  will-change: transform;
+}
+
+/* Particles beyond the mobile budget render only on wider screens. */
+@media (max-width: 639px) {
+  .uw-p-desktop {
+    display: none;
+  }
+}
+
+.uw-js > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.uw-school-mark {
+  position: absolute;
+}
+
+.uw-school-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.uw-particle {
+  position: absolute;
+  bottom: -4vh;
+  border-radius: 9999px;
+  background-color: #bcd9ff;
+  opacity: 0;
+  filter: blur(1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    background-size: 100% 105%;
+    animation: uw-gradient-drift 26s ease-in-out infinite alternate;
+  }
+
+  .uw-js {
+    animation: uw-cross-js var(--uw-cross-dur, 20s) linear var(--uw-cross-delay, 0s) forwards;
+  }
+
+  .uw-js > svg {
+    animation: uw-bob var(--uw-bob, 5s) ease-in-out infinite alternate;
+  }
+
+  .uw-school-mark {
+    animation: uw-bob-sm var(--uw-bob, 3s) ease-in-out infinite alternate;
+    animation-delay: var(--uw-bob-delay, 0s);
+  }
+
+  .uw-particle {
+    animation: uw-particle-rise var(--uw-dur, 48s) linear infinite;
+    animation-delay: var(--uw-delay, 0s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .underwater {
+    display: none;
+  }
+}
+
+@keyframes uw-gradient-drift {
+  from {
+    background-position: 50% 0%;
+  }
+  to {
+    background-position: 50% 100%;
+  }
+}
+
+/* One-shot randomized crossing. Direction comes from --uw-from/--uw-to
+   (and --uw-face flips the sprite); translateX percentages track the
+   creature's own width so any size clears the viewport edges cleanly.
+   --uw-dy adds a gentle vertical drift over the pass. */
+@keyframes uw-cross-js {
+  from {
+    transform: translate3d(var(--uw-from, -110vw), 0, 0) scaleX(var(--uw-face, 1));
+  }
+  to {
+    transform: translate3d(var(--uw-to, 110vw), var(--uw-dy, 0vh), 0) scaleX(var(--uw-face, 1));
+  }
+}
+
+/* Smaller sway for the tiny fish inside a school. */
+@keyframes uw-bob-sm {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes uw-bob {
+  from {
+    transform: translateY(-4px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes uw-particle-rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--uw-op, 0.06);
+  }
+  90% {
+    opacity: var(--uw-op, 0.06);
+  }
+  100% {
+    transform: translate3d(var(--uw-drift, 2vw), var(--uw-travel, -112vh), 0);
+    opacity: 0;
+  }
+}
+
+/* A tiny cluster of bubbles that rises in the distance about once a minute
+   and a half. Invisible whenever animations don't run (base opacity 0). */
+.uw-bubbles {
+  position: absolute;
+  left: 31%;
+  bottom: 18vh;
+  width: 12px;
+  height: 30px;
+  opacity: 0;
+  filter: blur(1.5px);
+}
+
+.uw-bubbles span {
+  position: absolute;
+  border-radius: 9999px;
+  background-color: #bcd9ff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .uw-bubbles {
+    animation: uw-bubbles-rise 84s linear infinite;
+    animation-delay: -30s;
+  }
+}
+
+@keyframes uw-bubbles-rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 0.06;
+  }
+  10% {
+    opacity: 0.06;
+  }
+  13% {
+    transform: translate3d(2.5vw, -36vh, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(2.5vw, -36vh, 0);
+    opacity: 0;
+  }
+}
