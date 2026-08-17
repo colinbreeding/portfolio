@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-10 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header>
       <div className="mx-auto flex max-w-xl items-center justify-between px-6 py-4">
         <Link
           href="/"
