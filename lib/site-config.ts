@@ -31,6 +31,7 @@ export const siteConfig = {
       name: "Statussy",
       url: "https://statussy.com",
       description: "Live status for the tools you use.",
+      launched: "Aug 2026",
     },
   ],
 };
