@@ -25,6 +25,15 @@ export const siteConfig = {
 
   // Link target for the "DM me on X" line in Get in touch.
   dmUrl: "https://x.com/colinbreeding",
+
+  projects: [
+    {
+      name: "Statussy",
+      url: "https://statussy.com",
+      description: "Live status for the tools you use.",
+      launched: "Sep 2026",
+    },
+  ],
 };
 
 export type SiteConfig = typeof siteConfig;

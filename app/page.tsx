@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header";
 import { About } from "@/components/about";
+import { Projects } from "@/components/projects";
 import { Socials } from "@/components/socials";
 import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
@@ -15,6 +16,10 @@ export default function Home() {
 
         <main className="mx-auto w-full max-w-xl flex-1 px-6 pt-11">
           <About />
+
+          <div className="mt-9">
+            <Projects />
+          </div>
 
           <div className="mt-9">
             <Socials />
